@@ -7,11 +7,13 @@ import { map } from 'rxjs/operators';
 // Créer une interface Recipe 
 export interface Recipe {
   id: number,
+  category: {
+    title: string
+  },
   title: string,
   content: string,
-  created_at: Date,
   image: string,
-  favorite: number,
+  favorite: boolean,
   time: number,
   difficulty: string,
   portions: number
@@ -31,6 +33,10 @@ export class RestService {
   // Observable permet d'avoir une gestion asynchrone d'une requête
   // Obtenir résultat requête GET pour toutes les recettes
   getRecipes(): Observable<any> {
-  return this.http.get<Recipe>(endpoint + 'recipes/');
+  return this.http.get<Recipe>(endpoint + 'recipes');
+  }
+
+  addRecipe(recipe: Recipe): Observable<any> {
+    return this.http.post<Recipe>(endpoint + 'recipe', recipe);
   }
 }
