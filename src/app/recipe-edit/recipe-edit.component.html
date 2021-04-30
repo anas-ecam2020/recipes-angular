@@ -1,5 +1,5 @@
 <div>
-    <h2>Recipe add</h2>
+    <h2>Recipe edit</h2>
     <input type="text" [(ngModel)]="recipe.title" placeholder="Titre"><br>
     <input type="text" [(ngModel)]="recipe.category.title" placeholder="Catégorie"><br>
     <input type="text" [(ngModel)]="recipe.content" placeholder="Description"><br>
@@ -9,5 +9,5 @@
     <input type="text" [(ngModel)]="recipe.difficulty" placeholder="Difficulté"><br>
     <input type="text" [(ngModel)]="recipe.portions" placeholder="Portions"><br>
     
-    <button (click)="addRecipe()">Ajoutez la recette</button>
+    <button (click)="updateRecipe()">Modifiez la recette</button>
 </div>

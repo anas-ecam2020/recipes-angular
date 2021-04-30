@@ -39,4 +39,12 @@ export class RestService {
   addRecipe(recipe: Recipe): Observable<any> {
     return this.http.post<Recipe>(endpoint + 'recipe', recipe);
   }
+
+  updateRecipe(recipe: Recipe): Observable<any> {
+    return this.http.put<Recipe>(endpoint + 'recipe/' + recipe.id, recipe);
+  }
+
+  getRecipe(id: number): Observable<any> {
+    return this.http.get<Recipe>(endpoint + 'recipe/' + id);
+  }
 }

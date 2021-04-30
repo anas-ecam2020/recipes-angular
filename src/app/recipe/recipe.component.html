@@ -1,6 +1,10 @@
 <h2>Recipes list</h2>
+<div>
+    <button (click)='add()'>Ajoutez une recette</button>
+</div>
 <ul>
     <li *ngFor="let r of recipes">
         {{r.title}}
+        <button routerLink="/recipe-edit/{{r.id}}">Modifiez la recette</button>
     </li>
 </ul>

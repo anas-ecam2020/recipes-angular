@@ -27,4 +27,8 @@ export class RecipeComponent implements OnInit {
       }
     )
   }
+
+  add() {
+    this.router.navigate(['/recipe-add']);
+  }
 }

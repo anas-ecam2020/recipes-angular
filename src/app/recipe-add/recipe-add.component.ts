@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RestService } from '../rest.service';
+import { RestService, Recipe } from '../rest.service';
 import { ActivatedRoute,Router } from '@angular/router';
 
 
@@ -10,19 +10,7 @@ import { ActivatedRoute,Router } from '@angular/router';
 })
 export class RecipeAddComponent implements OnInit {
 
-  recipe = {
-    id: 0,
-    category: {
-      title: ''
-    },
-    title: '',
-    content: '',
-    image: '',
-    favorite: true,
-    time: 0,
-    difficulty: '',
-    portions: 0
-  }
+  recipe: Recipe;
 
   constructor(public rest: RestService, private route:ActivatedRoute, private router: Router) { }
 
