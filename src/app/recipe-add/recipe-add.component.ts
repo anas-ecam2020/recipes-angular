@@ -10,7 +10,19 @@ import { ActivatedRoute,Router } from '@angular/router';
 })
 export class RecipeAddComponent implements OnInit {
 
-  recipe: Recipe;
+  recipe: Recipe = {
+    id: 0,
+    category: {
+      title: ''
+    },
+    title: '',
+    content: '',
+    image: '',
+    favorite: true,
+    time: 0,
+    difficulty: '',
+    portions: 0
+  };
 
   constructor(public rest: RestService, private route:ActivatedRoute, private router: Router) { }
 
