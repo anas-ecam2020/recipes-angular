@@ -33,7 +33,8 @@ export class RestService {
   // Observable permet d'avoir une gestion asynchrone d'une requête
   // Obtenir résultat requête GET pour toutes les recettes
   getRecipes(): Observable<any> {
-  return this.http.get<Recipe>(endpoint + 'recipes');
+  return this.http.get<Recipe>(endpoint + 'recipes').pipe(
+    catchError(this.handleError));
   }
 
   addRecipe(recipe: Recipe): Observable<any> {
@@ -47,4 +48,18 @@ export class RestService {
   getRecipe(id: number): Observable<any> {
     return this.http.get<Recipe>(endpoint + 'recipe/' + id);
   }
+
+  private handleError(error: HttpErrorResponse): any {
+    if (error.error instanceof ErrorEvent) {
+      console.error('An error occurred:', error.error.message);
+    } else {
+      console.error(
+        `Backend returned code ${error.status}, ` +
+        `body was: ${error.error}`);
+    }
+    return throwError(
+      'Something bad happened; please try again later.');
+  }
+
 }
+

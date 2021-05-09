@@ -5,9 +5,9 @@
     <input type="text" [(ngModel)]="recipe.content" placeholder="Description"><br>
     <input type="text" [(ngModel)]="recipe.image" placeholder="Image"><br>
     <input type="text" [(ngModel)]="recipe.favorite" placeholder="Favori"><br>
-    <input type="text" [(ngModel)]="recipe.time" placeholder="Temps de préparation"><br>
+    <input type="number" [(ngModel)]="recipe.time" placeholder="Temps de préparation"><br>
     <input type="text" [(ngModel)]="recipe.difficulty" placeholder="Difficulté"><br>
-    <input type="text" [(ngModel)]="recipe.portions" placeholder="Portions"><br>
+    <input type="number" [(ngModel)]="recipe.portions" placeholder="Portions"><br>
     
     <button (click)="addRecipe()">Ajoutez la recette</button>
 </div>
