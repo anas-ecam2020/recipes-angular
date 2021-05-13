@@ -31,4 +31,16 @@ export class RecipeComponent implements OnInit {
   add() {
     this.router.navigate(['/recipe-add']);
   }
+
+  delete(id: number) {
+    this.rest.deleteRecipe(id).subscribe(
+      (response) => {
+        console.log(response);
+        this.ngOnInit();
+      },
+    err => {
+      console.log("Error");
+    }
+    )   
+  }
 }

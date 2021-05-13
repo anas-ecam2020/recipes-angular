@@ -49,6 +49,10 @@ export class RestService {
     return this.http.get<Recipe>(endpoint + 'recipe/' + id);
   }
 
+  deleteRecipe(id: number): Observable<any> {
+    return this.http.delete<Recipe>(endpoint + 'recipe/' + id);
+  }
+
   private handleError(error: HttpErrorResponse): any {
     if (error.error instanceof ErrorEvent) {
       console.error('An error occurred:', error.error.message);

@@ -1,10 +1,11 @@
 <h2>Recipes list</h2>
 <div>
-    <button (click)='add()'>Ajoutez une recette</button>
+    <button (click)='add()'>Ajouter une recette</button>
 </div>
 <ul>
     <li *ngFor="let r of recipes">
         {{r.title}}
-        <button routerLink="/recipe-edit/{{r.id}}">Modifiez la recette</button>
+        <button routerLink="/recipe-edit/{{r.id}}">Modifier</button>
+        <button (click)="delete(r.id)" routerLink="/recipes">Supprimer</button>
     </li>
 </ul>
