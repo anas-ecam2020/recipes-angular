@@ -29,7 +29,11 @@ export class RecipeEditComponent implements OnInit {
     this.rest.getRecipe(this.route.snapshot.params.id).subscribe(
       (data) => {
         console.log(data);
+        data.category = { title: data.category.title };
+        delete data.createdAt;
+        delete data.comments;
         this.recipe = data;
+        console.log(this.recipe);
       }
     )
   }
