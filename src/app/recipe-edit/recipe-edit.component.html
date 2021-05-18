@@ -1,13 +1,13 @@
 <div>
-    <h2>Recipe edit</h2>
-    <input type="text" [(ngModel)]="recipe.title" placeholder="Titre"><br>
-    <input type="text" [(ngModel)]="recipe.category.title" placeholder="Catégorie"><br>
-    <input type="text" [(ngModel)]="recipe.content" placeholder="Description"><br>
-    <input type="text" [(ngModel)]="recipe.image" placeholder="Image"><br>
-    <input type="text" [(ngModel)]="recipe.favorite" placeholder="Favori"><br>
-    <input type="number" [(ngModel)]="recipe.time" placeholder="Temps de préparation"><br>
-    <input type="text" [(ngModel)]="recipe.difficulty" placeholder="Difficulté"><br>
+    <h2>Recipe add</h2><br>
+    <input type="text" [(ngModel)]="recipe.title" placeholder="Recipe Title"><br>
+    <input type="text" [(ngModel)]="recipe.category.title" placeholder="Recipe Category"><br>
+    <input type="text" [(ngModel)]="recipe.content" placeholder="Recipe Description"><br>
+    <input type="text" [(ngModel)]="recipe.image" placeholder="Recipe Image"><br>
+    <input type="text" [(ngModel)]="recipe.favorite" placeholder="Favorite"><br>
+    <input type="number" [(ngModel)]="recipe.time" placeholder="Preparation Time"><br>
+    <input type="text" [(ngModel)]="recipe.difficulty" placeholder="Difficulty"><br>
     <input type="number" [(ngModel)]="recipe.portions" placeholder="Portions"><br>
-    
-    <button (click)="updateRecipe()">Modifiez la recette</button>
+    <br>
+    <button (click)="updateRecipe()">Update</button>
 </div>
